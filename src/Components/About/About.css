@@ -1,0 +1,108 @@
+.nosotrxs {
+    background-image:url(./nosotrxs-fondo-banner-B.svg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.nosotrxs-indice {
+    width: 80%;
+    display: flex;
+}
+
+.nosotrxs-indice h2 {
+    font-size: 2.5rem;
+    font-family: var(--tipografia-principal);
+    padding-top: .2rem;
+}
+
+.nosotrxs-indice-semiCirculo {
+    width: 20%;
+    height: 6rem;
+    background-color: var(--color-primario-A);
+    clip-path: circle(50% at 50% 0);
+    text-align: center;
+    align-self:flex-start
+}
+.nosotrxs-tarjeta {
+    width: 70%;
+    padding: 1rem;
+    border-radius: .75rem;
+    display: flex;
+    text-align:justify;
+    align-self: center;
+    justify-content: space-evenly;
+}
+
+.nosotrxs-tarjeta-der, .nosotrxs-tarjeta-izq {
+    width: 45%;
+    padding: 3rem;
+    border-radius: 15px;
+}
+
+.nosotrxs-tarjeta-izq {
+    background: linear-gradient(to bottom, rgb(255, 255, 255,0.2),rgba(255, 255, 255,0.1) ), url(./muestra_A.jpg);
+    background-size: cover;
+    margin-bottom: 3rem;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+    
+}
+
+.nosotrxs-tarjeta-der {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2),rgba(0,0,0,0.2) ), url(./muestra_B.jpg);
+    background-size: cover;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+    margin-left: 3rem;
+    margin-top: 3rem;
+    
+}
+
+.nosotrxs-tarjeta p {
+    width: 100%;
+    font-family: var(--tipografia-secundaria);
+    font-size: 1.2rem;
+    color: var(--color-neutro-lightness);
+    text-justify:distribute-all-lines;
+    line-height: 1.5;
+    text-align:left;
+}
+
+
+
+
+
+
+/*  Media queries - Responsive  */
+
+/*----------------- Large devices -------------------------*/
+
+@media only screen and (min-width: 992px ) and (max-width: 1200px) {
+        
+    
+}
+
+/*----------------- Medium devices -------------------------*/
+
+
+@media only screen and (min-width: 768px ) and (max-width: 991px) {
+ 
+
+}
+
+/*----------------- Small devices -------------------------*/
+
+
+@media only screen and (min-width: 576px ) and (max-width: 767px) {
+   
+
+}
+
+/*----------------- X Small devices -------------------------*/
+
+
+@media only screen and (max-width: 575px) {
+   
+
+}

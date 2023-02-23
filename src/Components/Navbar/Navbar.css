@@ -1,0 +1,124 @@
+.navbar{
+    background-color: var(--color-secundario-0);
+    height: 11vh;
+}
+
+.navbar-contenedor {
+    width: 80%;
+    font-family: var(--tipografia-principal);
+}
+
+.nav-logo-texto{
+    font-size: 2rem;
+}
+.nav-lista {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    width: 45%;
+    margin-bottom: 0;
+}
+
+.nav-lista a{
+    margin-left: 0.5rem;
+    text-decoration: none;
+    color: var(--color-neutro-darkness);
+}
+
+.nav-lista li {
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.5rem;
+    
+}
+
+.btn-hamburguesa {
+    display: none;
+}
+
+.bi {
+    color: var(--color-neutro-darkness);
+    margin-left: 0.75rem;
+    
+}
+
+/*  Media queries - Responsive  */
+
+/*----------------- Large devices -------------------------*/
+
+@media only screen and (min-width: 992px ) and (max-width: 1200px) {
+        
+    .navbar {
+        background-color: lightcoral;
+    }
+
+    
+}
+
+/*----------------- Medium devices -------------------------*/
+
+
+@media only screen and (min-width: 768px ) and (max-width: 991px) {
+    .navbar {
+        background-color: rgb(124, 250, 210);
+    }
+
+    .nav-lista{
+        display: none;
+
+    }
+
+    .btn-hamburguesa {
+        display: inline;
+        justify-content: center;
+    }
+
+}
+
+/*----------------- Small devices -------------------------*/
+
+
+@media only screen and (min-width: 576px ) and (max-width: 767px) {
+    .navbar {
+        background-color: rgb(226, 47, 246);
+    }
+    
+    .nav-logo-texto{
+        font-size: 1.7rem;
+    }
+
+    .nav-lista{
+        display: none;
+
+    }
+
+    .btn-hamburguesa {
+        display: inline;
+        justify-content: center;
+    }
+
+}
+
+/*----------------- X Small devices -------------------------*/
+
+
+@media only screen and (max-width: 575px) {
+    .navbar {
+        background-color: rgb(80, 94, 219);
+    }
+
+    .nav-logo-texto{
+        font-size: 1.5rem;
+    }
+
+    .nav-lista{
+        display: none;
+
+    }
+
+    .btn-hamburguesa {
+        display: inline;
+        justify-content: center;
+    }
+
+}

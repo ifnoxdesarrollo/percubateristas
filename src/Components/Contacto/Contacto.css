@@ -1,0 +1,142 @@
+
+.contacto {
+    background-image:url(./contacto-fondo-banner.svg);
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.contacto-indice {
+    
+    width: 80%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-indice-semiCirculo {
+    width: 20%;
+    height: 6rem;
+    background-color: #a4554d;
+    clip-path: circle(50% at 50% 0);
+    text-align: center;
+    align-self:center;
+    color: var(--color-neutro-darkness);
+    font-family: var(--tipografia-principal);
+    
+}
+
+.contacto-indice-semiCirculo h2 {
+    font-size: 3rem;
+    margin-top: .5rem;
+}
+
+.contacto-tarjeta {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    /* background-color: lightgreen; */
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.contacto-tarjeta_A {
+    width: 50%;
+    background-color: rgba(158, 159, 163, .49);
+    padding: 1rem;
+    border-radius: 20px;
+    
+}
+
+.tarjeta_A-form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.tarjeta_A-form label {
+    font-family: var(--tipografia-principal);
+    font-size: 1.5rem;
+    color: var(--color-neutro-darkness);
+    padding-left: .75rem;
+}
+
+.tarjeta_A-form input {
+    border: 1px solid rgb(122, 122, 124);
+    background-color: rgba(158, 159, 163, .49);
+    border-radius: 30px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+    font-family: var(--tipografia-secundaria);
+    font-size: 1.25rem;
+    padding-left: 1.25rem;
+    outline: none;
+
+}
+
+.tarjeta_A-form textarea {
+    background-color: rgba(158, 159, 163, .49);
+    box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+    padding: 1rem;
+    border-radius: 20px;
+    opacity: .9;
+    outline: none;
+    font-family: var(--tipografia-secundaria);
+    font-size: 1.25rem;
+    size-adjust: none;
+    resize: none;
+}
+
+.tarjeta_A-form-bnt {
+    width: 30%;
+    margin: 0 auto;
+    background-color: #a4554d;
+    border: none;
+    border-radius: 20px;
+    margin-top: .75rem;
+    font-family: var(--tipografia-principal);
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+    color: rgba(245, 245, 245, 0.932);
+}
+
+.contacto-tarjeta_B {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.tarjeta_B-texto {
+    background-color: rgba(158, 159, 163, .49);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.tarjeta_B-texto h4 {
+    font-family: var(--tipografia-principal);
+    font-size: 2.5rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.tarjeta_B-redes {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjeta_B-redes a{
+    margin-left: 1rem;
+    
+    
+}

@@ -1,0 +1,130 @@
+.sesiones {
+    background-image:url(./grabamos-fondo-banner.svg);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.sesiones-indice {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sesiones-indice-semiCirculo {
+    width: 20%;
+    height: 6rem;
+    background-color: var(--color-primario-C);
+    clip-path: circle(50% at 50% 0);
+    text-align: center;
+    align-self:flex-end;
+    color: var(--color-neutro-darkness);
+    font-family: var(--tipografia-principal);
+}
+
+.sesiones-indice-semiCirculo h2 {
+    font-size: 2rem;
+    margin-top: .4rem;
+    font-family: var(--tipografia-principal);
+}
+
+.sesiones-tarjeta {
+    width: 80%;    
+    height: 80vh;
+    background-color: var(--color-primario-C);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sesiones-tarjeta-titulo {
+    font-family: var(--tipografia-principal);
+    font-size: 2.5rem;
+    color: var(--color-primario-A);
+    margin-bottom: 1rem;
+}
+
+.sesiones-tarjeta-planes {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+
+.sesiones-planes_izq, .sesiones-planes_cen, .sesiones-planes_der {
+    width: 20%;
+    overflow: hidden;
+    border-radius: 15px;
+    
+}
+
+.sesiones-planes_izq img, .sesiones-planes_cen img, .sesiones-planes_der img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+
+.sesiones-tarjeta img {
+    transition: all .3s linear;
+}
+
+.sesiones-planes_izq img:hover{
+    transform: scale(1.2);
+    opacity: .8;
+    border-radius: 15px;
+
+}
+
+.sesiones-planes_cen img:hover{
+    transform: scale(1.2);
+    opacity: .8;
+    border-radius: 15px;
+}
+
+.sesiones-planes_der img:hover{
+    transform: scale(1.2);
+    opacity: .8;
+    border-radius: 15px;
+}
+
+.sesiones-tarjeta-texto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+   
+}
+
+.sesiones-tarjeta-texto_izq {
+    align-self: flex-start;
+    text-align: center;
+    width: 55%;
+    background-color: #98DBDF;
+    border-radius: 0 2rem 2rem 0;
+    padding: .5rem;
+    font-family: var(--tipografia-secundaria);
+}
+
+.sesiones-tarjeta-texto_der {
+    font-family: var(--tipografia-secundaria);
+    align-self: flex-end;
+    text-align: center;
+    width: 55%;
+    background-color: #FEF5D7;
+    border-radius: 2rem 0 0 2rem;
+    padding: .5rem;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    
+}
+

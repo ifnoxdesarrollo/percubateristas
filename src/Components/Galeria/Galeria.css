@@ -1,0 +1,143 @@
+.galeria {
+    background-image:url(./galeria-fondo-banner.svg);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.galeria-indice {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.galeria-indice-semiCirculo {
+    width: 20%;
+    height: 6rem;
+    background-color: var(--color-neutro-darkness);
+    clip-path: circle(50% at 50% 0);
+    text-align: center;
+    align-self:flex-end;
+    color: var(--color-neutro-lightness);
+    font-family: var(--tipografia-principal);
+}
+
+.galeria-indice-semiCirculo h2 {
+    font-size: 3rem;
+}
+
+/* clases para el carrusell*/
+
+.carousel-products {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+    
+    }
+    
+    .carousel__container {
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+    
+    .carousel__item {
+        background-color: #135cb1;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center;
+        position: relative;
+    }
+    
+    .carousel__item:hover~.carousel__item {
+        transform: translate3d(100px, 0, 0);
+    }
+    
+    .carousel__container:hover .carousel__item {
+        opacity: 0.3;
+    }
+    
+    .carousel__container:hover .carousel__item:hover {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+    
+    .carousel__item__img {
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    .carousel__item__details {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 180;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    
+    
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    
+    .carousel__item__details:hover {
+        opacity: 1;
+        color: white;
+    }
+    
+    .carousel__item__details__title {
+        font-size: 10px;
+        font-weight: bold;
+        color: #FFFFFF;
+        line-height: 0;
+        position: absolute;
+        z-index: 3;
+    }
+    
+    
+    .carousel__item__details__subtitle {
+        font-size: 7px;
+        color: #FFFFFF;
+    }
+    
+    .boton-vermas {
+        font-size: 14px;
+        color: white;
+        line-height: 0;
+        width: 80px;
+        height: 30px;
+        margin-left: 100px;
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    .a-vermas {
+        text-decoration: white;
+        color: white;
+        font-size: 13px;
+        z-index: 10000;
+    
+    }
+    
+    .plus {
+        padding: 10px;
+        position: absolute;
+    }
