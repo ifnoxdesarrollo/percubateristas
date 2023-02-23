@@ -1,9 +1,70 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from "react";
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import withReactContent from "sweetalert2-react-content";
+import React, { useState, useEffect } from "react";
 import { auth } from "../../firebaseConfig/firebase";
-import SignUp from "./SignUp";
+import "../Navbar/Navbar.css";
+import Swal from "sweetalert2";
 
 const SignIn = () => {
+
+  //manejo de estado de sesion
+
+  const [authUser, setAuthUser] = useState(null);
+
+  useEffect(() => {
+    const listen = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthUser(user);
+      } else {
+        setAuthUser(null);
+      }
+    });
+
+    return () => {
+      listen();
+    };
+  }, []);
+
+  //Funcion para cerrar sesion
+
+  const UserSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        cerroSesion();
+      })
+      .catch((error) => console.log(error));
+  };
+
+  //Sweet alert, alerta de operacion exitosa, cerro sesion
+
+  const MySwal = withReactContent(Swal);
+
+  const exitoso = () => {
+    MySwal.fire({
+      position: "center",
+      icon: "success",
+      title: "¡Operación realizada con éxito!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  const cerroSesion = () => {
+    MySwal.fire({
+      position: "center",
+      icon: "success",
+      title: "Cerraste sesión",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  // inicio de sesion
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,16 +78,30 @@ const SignIn = () => {
         console.log(error);
       });
   };
+
+
   return (
     <>
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        Descargar
-      </button>
+      <>
+        {authUser ? (
+          <><button
+          className="btn-inicio"
+          onClick={UserSignOut}
+        >Cerrar Sesión
+        </button></>
+        ) : (
+          <>
+            <button
+              className="btn-inicio"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Iniciar Sesión
+            </button>
+          </>
+        )}
+        
+      </>
 
       <div
         class="modal fade"
@@ -64,11 +139,17 @@ const SignIn = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
-                  <button type="submit">Ingresar</button>
+                  <button
+                    type="submit"
+                    onClick={() => {
+                      exitoso();
+                    }}
+                  >
+                    Ingresar
+                  </button>
+                  
                 </form>
               </div>
-
-              {<SignUp/>}
             </div>
             <div class="modal-footer">
               <button
@@ -78,8 +159,13 @@ const SignIn = () => {
               >
                 Cerrar
               </button>
-              
-              
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+              >
+                Guardar Cambios
+              </button>
             </div>
           </div>
         </div>

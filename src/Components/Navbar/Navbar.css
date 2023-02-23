@@ -1,15 +1,22 @@
 .navbar{
     background-color: var(--color-secundario-0);
     height: 11vh;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar-contenedor {
     width: 80%;
     font-family: var(--tipografia-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo-texto{
-    font-size: 2rem;
+    font-size: 2.1rem;
+    margin: 0 auto;
+
 }
 .nav-lista {
     display: flex;
@@ -20,7 +27,7 @@
 }
 
 .nav-lista a{
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     text-decoration: none;
     color: var(--color-neutro-darkness);
 }
@@ -40,6 +47,39 @@
     color: var(--color-neutro-darkness);
     margin-left: 0.75rem;
     
+}
+
+.btn-inicio {
+    width: 6rem;
+    color: var(--color-neutro-lightness);
+    border-radius: 2rem;
+    background-color: #9e9fa3;
+    border: none;
+    padding: .1rem .5rem;
+    margin-right: .8rem;
+    box-shadow: 2px 2px 2px #505155;
+    font-size: 1.2rem;
+}
+
+.btn-inicio:hover {
+    transform: scale(1.1);
+    transition: .4seg all linear;
+}
+
+.btn-crear {
+    width: 6rem;
+    color: var(--color-neutro-lightness);
+    border-radius: 2rem;
+    background-color: #686a70;
+    border: none;
+    padding: .1rem .5rem;
+    box-shadow: 2px 2px 2px #505155;
+    font-size: 1.2rem;
+}
+
+.btn-crear:hover {
+    transform: scale(1.1);
+    transition: .4seg all linear;
 }
 
 /*  Media queries - Responsive  */

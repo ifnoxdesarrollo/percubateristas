@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import './Perculoops.css';
 import song from '../Audios/song.mp3'
 import song2 from '../Audios/sin nombre.mp3'
+import SignIn from './../UserSession/SignIn';
+import BotonDescargar from './BotonDescargar';
+import DivInicioSesion from './DivInicioSesion';
+
+
+
 
 
 class Perculoops extends Component {
+
+   
 
     enReproduccion = null;
 
@@ -176,6 +184,8 @@ class Perculoops extends Component {
     }
 
 
+    
+
     render() {
         return (
 
@@ -187,7 +197,9 @@ class Perculoops extends Component {
                             <h2>Perculoops</h2>
                         </div>
                     </div>
+                    {<DivInicioSesion/>}
                     <div className='contenedor-reproductor'>
+                        
                         <div className='perculoops-reproductor'>
                             <h4>{this.enReproduccion}</h4>
                             <div className='perculoops-reproductor-progreso'></div>
@@ -212,9 +224,7 @@ class Perculoops extends Component {
                                     <p >{this.state[0].nombre}</p>
                                 </div>
 
-                                <div class="item-descarga">
-                                    <button className='btn-descarga'>Descarga</button>
-                                </div>
+                               {<BotonDescargar/>}
 
                                 <div class="item-duracion">
                                     <p>5:24</p>
