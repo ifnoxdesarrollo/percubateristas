@@ -12,14 +12,17 @@ import DivInicioSesion from './DivInicioSesion';
 
 class Perculoops extends Component {
 
-   
 
+
+    aDetener = null;
     enReproduccion = null;
+    enReproduccionNombre = null;
 
     state = [{
         // Get audio file in a variable
         audio: new Audio(song),
         nombre: "audio 1",
+        duracion: "0:00",
 
         // Set initial state of song
         isPlaying: false,
@@ -27,6 +30,7 @@ class Perculoops extends Component {
     {
         audio2: new Audio(song2),
         nombre2: "audio 2",
+        duracion: "0:00",
         isPlaying2: false,
     }
     ];
@@ -48,8 +52,12 @@ class Perculoops extends Component {
 
         // Change the state of song
         this.setState({ isPlaying: !isPlaying });
-    
-        return this.enReproduccion = this.state[0].nombre;
+
+        this.enReproduccion = this.state[0];
+
+        this.enReproduccion = this.playPause;
+        this.enReproduccionNombre = this.state[0].nombre;
+        this.aDetener = this.stopReload;
 
     };
 
@@ -69,112 +77,21 @@ class Perculoops extends Component {
         // Change the state of song
         this.setState({ isPlaying2: !isPlaying2 });
 
-        return this.enReproduccion = this.state[1].nombre2;
-       
+        this.enReproduccion = this.playPause2;
+        this.enReproduccionNombre = this.state[1].nombre2;
+        this.aDetener = this.stopReload1;
+
+
     };
 
-    //   playPause3 = () => {
-    //     // Get state of song
-    //     let isPlaying3 = this.state.isPlaying3;
 
-    //     if (isPlaying3) {
-    //       // Pause the song if it is playing
-    //       this.state.audio3.pause();
-    //     } else {
-    //       // Play the song if it is paused
-    //       this.state.audio3.play();
-    //     }
-
-    //     // Change the state of song
-    //     this.setState({ isPlaying3: !isPlaying3 });
-    //   };
-
-    //   playPause4 = () => {
-    //     // Get state of song
-    //     let isPlaying4 = this.state.isPlaying4;
-
-    //     if (isPlaying4) {
-    //       // Pause the song if it is playing
-    //       this.state.audio4.pause();
-    //     } else {
-    //       // Play the song if it is paused
-    //       this.state.audio4.play();
-    //     }
-
-    //     // Change the state of song
-    //     this.setState({ isPlaying4: !isPlaying4 });
-    //   };
-
-    //   playPause5 = () => {
-    //     // Get state of song
-    //     let isPlaying5 = this.state.isPlaying5;
-
-    //     if (isPlaying5) {
-    //       // Pause the song if it is playing
-    //       this.state.audio5.pause();
-    //     } else {
-    //       // Play the song if it is paused
-    //       this.state.audio5.play();
-    //     }
-
-    //     // Change the state of song
-    //     this.setState({ isPlaying5: !isPlaying5 });
-    //   };
-
-    //   playPause6 = () => {
-    //     // Get state of song
-    //     let isPlaying6 = this.state.isPlaying6;
-
-    //     if (isPlaying6) {
-    //       // Pause the song if it is playing
-    //       this.state.audio6.pause();
-    //     } else {
-    //       // Play the song if it is paused
-    //       this.state.audio6.play();
-    //     }
-
-    //     // Change the state of song
-    //     this.setState({ isPlaying6: !isPlaying6 });
-    //   };
-
-    //   playPause7 = () => {
-    //     // Get state of song
-    //     let isPlaying7 = this.state.isPlaying7;
-
-    //     if (isPlaying7) {
-    //       // Pause the song if it is playing
-    //       this.state.audio7.pause();
-    //     } else {
-    //       // Play the song if it is paused
-    //       this.state.audio7.play();
-    //     }
-
-    //     // Change the state of song
-    //     this.setState({ isPlaying7: !isPlaying7 });
-    //   };
-
-    //   playPause = () => {
-    //     // Get state of song
-    //     let isPlaying8 = this.state.isPlaying8;
-
-    //     if (isPlaying8) {
-    //       // Pause the song if it is playing
-    //       this.state.audio8.pause();
-    //     } else {
-    //       // Play the song if it is paused
-    //       this.state.audio8.play();
-    //     }
-
-    //     // Change the state of song
-    //     this.setState({ isPlaying8: !isPlaying8 });
-    //   };
-
-    
 
     stopReload = () => {
-       
+
         this.setState({ isPlaying: false });
-            this.state[0].audio.load();
+        this.state[0].audio.load();
+
+
     }
 
     stopReload1 = () => {
@@ -184,7 +101,7 @@ class Perculoops extends Component {
     }
 
 
-    
+
 
     render() {
         return (
@@ -197,17 +114,18 @@ class Perculoops extends Component {
                             <h2>Perculoops</h2>
                         </div>
                     </div>
-                    {<DivInicioSesion/>}
+                    {<DivInicioSesion />}
                     <div className='contenedor-reproductor'>
-                        
+
                         <div className='perculoops-reproductor'>
-                            <h4>{this.enReproduccion}</h4>
+                            <h4>{this.enReproduccionNombre}</h4>
                             <div className='perculoops-reproductor-progreso'></div>
                             <div className='perculoops-reproductor-duracion'></div>
                             <div className='perculoops-reproductor-controladores'>
 
-                                <button className='btn-play'>Play</button>
-                                <button className='btn-pausa'>Pausa</button>
+                                <button onClick={this.aDetener} className='btn-stop'>Stop</button>
+                                <button onClick={this.enReproduccion} className='btn-play'>Play</button>
+                                <button onClick={this.enReproduccion} className='btn-pausa'>Pausa</button>
                             </div>
                         </div>
                         <div class="perculoops-lista_de_temas">
@@ -216,7 +134,7 @@ class Perculoops extends Component {
                                 <div class="item-play"  >
                                     <button onClick={this.playPause} >{this.state.isPlaying ? "Pausa" : "Play"}</button>
                                 </div>
-                                
+
                                 <div >
                                     <button onClick={this.stopReload} >Stop</button>
                                 </div>
@@ -224,22 +142,22 @@ class Perculoops extends Component {
                                     <p >{this.state[0].nombre}</p>
                                 </div>
 
-                               {<BotonDescargar/>}
+                                {<BotonDescargar />}
 
                                 <div class="item-duracion">
-                                    <p>5:24</p>
+                                    <p>{this.state[1].duracion}</p>
                                 </div>
                             </div>
 
                             <div class="item_2">
                                 <div class="item-play">
-                                    <button  onClick={this.playPause2} >{this.state.isPlaying2 ? "Pausa" : "Play"}</button>
+                                    <button onClick={this.playPause2} >{this.state.isPlaying2 ? "Pausa" : "Play"}</button>
                                 </div>
                                 <div >
                                     <button onClick={this.stopReload1} >Stop</button>
                                 </div>
                                 <div class="item-nombre">
-                                    <p>Nombre canción 2</p>
+                                    <p>{this.state[1].nombre2}</p>
                                 </div>
 
                                 <div class="item-descarga">
@@ -247,7 +165,7 @@ class Perculoops extends Component {
                                 </div>
 
                                 <div class="item-duracion">
-                                    <p>3:54</p>
+                                    <p>{this.state[1].duracion}</p>
                                 </div>
                             </div>
 

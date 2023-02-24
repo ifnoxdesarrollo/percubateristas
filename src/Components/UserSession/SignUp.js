@@ -1,10 +1,13 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import { auth } from "../../firebaseConfig/firebase";
 import Swal from "sweetalert2";
 
-
 const SignUp = () => {
+  const usuarioCreado = false;
   const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
@@ -35,12 +38,21 @@ const SignUp = () => {
       });
   };
 
-
   const exitoso = () => {
     Swal.fire({
       position: "center",
       icon: "success",
       title: "¡Operación realizada con éxito!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
+  const error = () => {
+    Swal.fire({
+      position: "center",
+      icon: "warning",
+      title: "Datos incorrectos",
       showConfirmButton: false,
       timer: 1500,
     });
@@ -91,7 +103,12 @@ const SignUp = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
-                  <button onClick={() => {exitoso();}} type="submit">Crear</button>
+                  <button
+                    onClick={authUser ? error : exitoso}
+                    type="submit"
+                  >
+                    Crear
+                  </button>
                   <p>
                     {authUser ? (
                       <>

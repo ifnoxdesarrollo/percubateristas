@@ -10,7 +10,6 @@ import "../Navbar/Navbar.css";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
-
   //manejo de estado de sesion
 
   const [authUser, setAuthUser] = useState(null);
@@ -53,6 +52,16 @@ const SignIn = () => {
     });
   };
 
+  const error = () => {
+    MySwal.fire({
+      position: "center",
+      icon: "warning",
+      title: "Usuario o contraseña incorrectos.",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  };
+
   const cerroSesion = () => {
     MySwal.fire({
       position: "center",
@@ -73,22 +82,23 @@ const SignIn = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+        exitoso();
+        
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-
   return (
     <>
       <>
         {authUser ? (
-          <><button
-          className="btn-inicio"
-          onClick={UserSignOut}
-        >Cerrar Sesión
-        </button></>
+          <>
+            <button className="btn-inicio" onClick={UserSignOut}>
+              Cerrar Sesión
+            </button>
+          </>
         ) : (
           <>
             <button
@@ -100,7 +110,6 @@ const SignIn = () => {
             </button>
           </>
         )}
-        
       </>
 
       <div
@@ -139,15 +148,8 @@ const SignIn = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   ></input>
-                  <button
-                    type="submit"
-                    onClick={() => {
-                      exitoso();
-                    }}
-                  >
-                    Ingresar
-                  </button>
-                  
+                  <p>{authUser ? <>Ingresaste</> : <>Email o contraseña incorrectos</>}</p>
+                  <button type="submit">Ingresar</button>
                 </form>
               </div>
             </div>
