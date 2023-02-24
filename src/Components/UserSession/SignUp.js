@@ -7,7 +7,6 @@ import { auth } from "../../firebaseConfig/firebase";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const usuarioCreado = false;
   const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {

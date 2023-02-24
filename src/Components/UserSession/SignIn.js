@@ -52,15 +52,15 @@ const SignIn = () => {
     });
   };
 
-  const error = () => {
-    MySwal.fire({
-      position: "center",
-      icon: "warning",
-      title: "Usuario o contraseña incorrectos.",
-      showConfirmButton: false,
-      timer: 1500,
-    });
-  };
+  // const error = () => {
+  //   MySwal.fire({
+  //     position: "center",
+  //     icon: "warning",
+  //     title: "Usuario o contraseña incorrectos.",
+  //     showConfirmButton: false,
+  //     timer: 1500,
+  //   });
+  // };
 
   const cerroSesion = () => {
     MySwal.fire({

@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import SignIn from './../UserSession/SignIn';
 import SignUp from '../UserSession/SignUp';
+import { Hero } from '../Hero/Hero';
 
 const Navbar = () => {
+
+    const [mostrarHamb, setMostrarHamb] = useState (false);
+
     return(
+        <>
         <nav className='navbar'>
             <div className='navbar-contenedor'>
                 <div className="nav-logo">
                     <h1 className='nav-logo-texto'>PercuBateristasOnLine</h1>
                 </div>
                 <div className='nav-contenedor-lista'>
-                    <ul className="nav-lista">
+                <ul className={`nav-lista ${setMostrarHamb && "abierto"}`}>
                         <li><a href="#seccion-hero">Home</a></li>
                         <li><a href="#seccion-nosotrxs">Nosotrxs</a></li>
                         <li><a href="#seccion-perculoops">Perculoops</a></li>
@@ -22,7 +27,11 @@ const Navbar = () => {
                     </ul>
                 </div>
                 
-                <div className="btn-hamburguesa">HOla</div>
+                <div className={`btn-hamburguesa ${setMostrarHamb && "abierto"}`} onClick={()=>{setMostrarHamb(!setMostrarHamb)}}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 
                 {/* <div className="nav-redes">
                     
@@ -47,7 +56,9 @@ const Navbar = () => {
            {/* <div>Login</div> */}
 
         </nav>
+         <Hero abierto={mostrarHamb}/>
+         </>
     )
 }
 
-export { Navbar }
+export { Navbar } 

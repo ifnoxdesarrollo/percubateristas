@@ -2,10 +2,10 @@ import React from 'react';
 import './Hero.css'
 
 
-const Hero = () => {
+const Hero = (abierto) => {
     return(
         <>
-         <div id="seccion-hero" className='hero'>
+         <div id="seccion-hero" className={`hero ${abierto && "abierto"}`}>
             <div className='container container-hero'>
                <div className='hero-texto'>
                     <div className='hero-texto-mov'>
