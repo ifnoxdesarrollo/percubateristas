@@ -75,8 +75,6 @@ class Perculoops extends Component {
     },
   ];
 
- 
- 
 
   // Main function to handle both play and pause operations
   playPause = () => {
@@ -393,7 +391,7 @@ class Perculoops extends Component {
                 </div>
 
                 <div class="item-descarga">
-                <a  href="Ritmo Samba 80 bpm 1.mp3" download="Ritmo Samba 80 bpm 1.mp3">{authUser ? "caca" : "coco"}</a>
+                <BotonDescargar audio="Afoxe 1"/>
                 </div> 
 
                 <div class="item-duracion">
@@ -415,7 +413,7 @@ class Perculoops extends Component {
                 </div>
 
                <div class="item-descarga">
-                <a href="Ritmo Samba 80 bpm 2.mp3" download="Ritmo Samba 80 bpm 2.mp3"><BotonDescargar/></a>
+                <BotonDescargar audio="Afoxe 2"/>
                 </div>
 
                 <div class="item-duracion">
@@ -436,9 +434,7 @@ class Perculoops extends Component {
                   <p>{this.state[2].nombre}</p>
                 </div>
 
-                <div class="item-descarga">
-                <a href="Ritmo Samba 90 bpm 1.mp3" download="Ritmo Samba 90 bpm 1.mp3"><BotonDescargar/></a>
-                </div>
+                
 
                 <div class="item-duracion">
                   <p>{this.state[2].duracion}</p>
@@ -458,10 +454,7 @@ class Perculoops extends Component {
                   <p>{this.state[3].nombre}</p>
                 </div>
 
-                <div class="item-descarga">
-                <a href="Ritmo Samba 90 bpm 2.mp3" download="Ritmo Samba 90 bpm 2.mp3"><BotonDescargar/></a>
-                </div>
-
+                
                 <div class="item-duracion">
                   <p>{this.state[3].duracion}</p>
                 </div>
@@ -480,9 +473,7 @@ class Perculoops extends Component {
                   <p>{this.state[4].nombre}</p>
                 </div>
 
-                <div class="item-descarga">
-                <a href="Ritmo Coco 100 bpm 1.mp3" download="Ritmo Coco 100 bpm 1.mp3"><BotonDescargar/></a>
-                </div>
+              
 
                 <div class="item-duracion">
                   <p>{this.state[4].duracion}</p>
@@ -502,9 +493,7 @@ class Perculoops extends Component {
                   <p>{this.state[5].nombre}</p>
                 </div>
 
-                <div class="item-descarga">
-                <a href="Ritmo Coco 100 bpm 2.mp3" download="Ritmo Coco 100 bpm 2.mp3"><BotonDescargar/></a>
-                </div>
+                
 
                 <div class="item-duracion">
                   <p>{this.state[5].duracion}</p>
@@ -524,10 +513,7 @@ class Perculoops extends Component {
                   <p>{this.state[6].nombre}</p>
                 </div>
 
-                <div class="item-descarga">
-                <a href="Ritmo Afoxe 80 bpm 1.mp3" download="Ritmo Afoxe 80 bpm 1.mp3"><BotonDescargar/></a>
-                </div>
-
+                
                 <div class="item-duracion">
                   <p>{this.state[6].duracion}</p>
                 </div>
@@ -546,10 +532,7 @@ class Perculoops extends Component {
                   <p>{this.state[7].nombre}</p>
                 </div>
 
-                <div class="item-descarga">
-                <a href="Ritmo afoxe 80 bpm 2.mp3" download="Ritmo afoxe 80 bpm 2
-                .mp3"><BotonDescargar/></a>
-                </div>
+                
 
 
                 <div class="item-duracion">

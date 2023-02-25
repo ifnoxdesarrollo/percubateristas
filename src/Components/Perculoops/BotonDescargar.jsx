@@ -4,7 +4,27 @@ import { auth } from "../../firebaseConfig/firebase";
 import "../Perculoops/Perculoops.css";
 import SignIn from "./../UserSession/SignIn";
 
-const BotonDescargar = () => {
+const BotonDescargar = (audio) => {
+  let audioApasar = null;
+
+  if (audio === "Samba 1") {
+    audioApasar = "Ritmo Samba 80 bpm 1.mp3";
+  } else if (audio === "Samba 2") {
+    audioApasar = "Ritmo Samba 80 bpm 2.mp3";
+  } else if (audio === "Samba 3") {
+    audioApasar = "Ritmo Samba 90 bpm 1.mp3";
+  } else if (audio === "Samba 4") {
+    audioApasar = "Ritmo Samba 90 bpm 2.mp3";
+  } else if (audio === "Coco 1") {
+    audioApasar = "Ritmo Coco 100 bpm 1.mp3";
+  } else if (audio === "Coco 2") {
+    audioApasar = "Ritmo Coco 100 bpm 2.mp3";
+  } else if (audio === "Afoxe 1") {
+    audioApasar = "Ritmo Afoxe 80 bpm 1.mp3";
+  } else if (audio === "Afoxe 2") {
+    audioApasar = "Ritmo afoxe 80 bpm 2.mp3";
+  }
+
   const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
@@ -25,7 +45,7 @@ const BotonDescargar = () => {
     <>
       <button className="btn-descarga">
         {authUser ? (
-          <>Descargar</>
+          <><a href={audioApasar} download={audioApasar}>Descargar</a></>
         ) : (
           <>
             <SignIn />
