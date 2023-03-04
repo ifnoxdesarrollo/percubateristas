@@ -15,7 +15,7 @@ const About = () => {
 
             <div className='nosotrxs-tarjeta'>
                 <div className='nosotrxs-tarjeta-izq'>
-                    <p className='nostroxs-tarjeta-texto'>Mi nombre es <span>Facundo Berjeli</span>  y soy una suerte de mezcla rara entre baterista y percusionista, <span>un percubaterista</span>.
+                    <p className='nostroxs-tarjeta-texto'>Mi nombre es <span>Facundo Berjelí</span>  y soy una suerte de mezcla rara entre baterista y percusionista, <span>un percubaterista</span>.
                     
                     Soy un tipo inquieto que todo el tiempo está pensando cómo hacer mejor las cosas, que no puede dejar las manos quietas y que si lo descuidás un segundo ya planificó mil proyectos.
                     </p>

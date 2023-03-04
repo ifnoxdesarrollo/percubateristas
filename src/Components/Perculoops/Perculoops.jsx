@@ -1,5 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
-import { auth } from "../../firebaseConfig/firebase";
+import React, { Component } from "react";
 import "./Perculoops.css";
 import samba from "../Audios/Ritmo Samba 80 bpm 1.mp3";
 import samba2 from "../Audios/Ritmo Samba 80 bpm 2.mp3";
@@ -9,17 +8,15 @@ import coco from "../Audios/Ritmo Coco 100 bpm 1.mp3";
 import coco2 from "../Audios/Ritmo Coco 100 bpm 2.mp3";
 import afoxe from "../Audios/Ritmo Afoxe 80 bpm 1.mp3";
 import afoxe2 from "../Audios/Ritmo afoxe 80 bpm 2.mp3";
-
 import BotonDescargar from "./BotonDescargar";
 import DivInicioSesion from "./DivInicioSesion";
-import { onAuthStateChanged } from 'firebase/auth';
 
 class Perculoops extends Component {
-
-        
+  estadoPlayPausa = null;
   aDetener = null;
   enReproduccion = null;
   enReproduccionNombre = null;
+  pais = "brasil";
 
   state = [
     {
@@ -75,7 +72,6 @@ class Perculoops extends Component {
     },
   ];
 
-
   // Main function to handle both play and pause operations
   playPause = () => {
     // Get state of song
@@ -91,9 +87,11 @@ class Perculoops extends Component {
     if (isPlaying) {
       // Pause the song if it is playing
       this.state[0].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[0].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -119,9 +117,11 @@ class Perculoops extends Component {
     if (isPlaying2) {
       // Pause the song if it is playing
       this.state[1].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[1].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -146,9 +146,11 @@ class Perculoops extends Component {
     if (isPlaying3) {
       // Pause the song if it is playing
       this.state[2].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[2].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -171,13 +173,15 @@ class Perculoops extends Component {
     this.stopReload6();
     this.stopReload7();
     this.stopReload8();
-    
+
     if (isPlaying4) {
       // Pause the song if it is playing
       this.state[3].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[3].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -204,9 +208,11 @@ class Perculoops extends Component {
     if (isPlaying5) {
       // Pause the song if it is playing
       this.state[4].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[4].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -233,9 +239,11 @@ class Perculoops extends Component {
     if (isPlaying6) {
       // Pause the song if it is playing
       this.state[5].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[5].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -262,9 +270,11 @@ class Perculoops extends Component {
     if (isPlaying7) {
       // Pause the song if it is playing
       this.state[6].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[6].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -291,9 +301,11 @@ class Perculoops extends Component {
     if (isPlaying8) {
       // Pause the song if it is playing
       this.state[7].audio.pause();
+      this.estadoPlayPausa = true;
     } else {
       // Play the song if it is paused
       this.state[7].audio.play();
+      this.estadoPlayPausa = false;
     }
 
     // Change the state of song
@@ -348,6 +360,7 @@ class Perculoops extends Component {
     this.state[7].audio.load();
   };
 
+ 
   render() {
     return (
       <>
@@ -357,24 +370,34 @@ class Perculoops extends Component {
               <h2>Perculoops</h2>
             </div>
           </div>
+          
           {<DivInicioSesion />}
+          
+
           <div className="contenedor-reproductor">
             <div className="perculoops-reproductor">
               <h4>{this.enReproduccionNombre}</h4>
               <div className="perculoops-reproductor-progreso"></div>
               <div className="perculoops-reproductor-duracion"></div>
               <div className="perculoops-reproductor-controladores">
-                <button onClick={this.aDetener} className="btn-stop">
-                  Stop
+                <button onClick={this.aDetener} className="btn btn-danger">
+                  <i class="bi bi-stop-circle"></i>
                 </button>
-                <button onClick={this.enReproduccion} className="btn-play">
-                  Play
-                </button>
-                <button onClick={this.enReproduccion} className="btn-pausa">
-                  Pausa
+                <button
+                  onClick={this.enReproduccion}
+                  className="btn btn-primary"
+                >
+                  <i
+                    className={
+                      this.estadoPlayPausa
+                        ? "bi bi-play-circle"
+                        : "bi bi-pause-circle"
+                    }
+                  ></i>
                 </button>
               </div>
             </div>
+
             <div class="perculoops-lista_de_temas">
               <div class="item_1">
                 <div class="item-play">
@@ -383,16 +406,13 @@ class Perculoops extends Component {
                   </button>
                 </div>
 
-                {/* <div>
-                  <button onClick={this.stopReload}>Stop</button>
-                </div> */}
                 <div class="item-nombre">
                   <p>{this.state[0].nombre}</p>
                 </div>
 
                 <div class="item-descarga">
-                <BotonDescargar audio="Afoxe 1"/>
-                </div> 
+                  <BotonDescargar audioApasar="Samba 1" />
+                </div>
 
                 <div class="item-duracion">
                   <p>{this.state[0].duracion}</p>
@@ -405,15 +425,13 @@ class Perculoops extends Component {
                     {this.state.isPlaying2 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload2}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[1].nombre}</p>
                 </div>
 
-               <div class="item-descarga">
-                <BotonDescargar audio="Afoxe 2"/>
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Samba 2" />
                 </div>
 
                 <div class="item-duracion">
@@ -427,14 +445,14 @@ class Perculoops extends Component {
                     {this.state.isPlaying3 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload3}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[2].nombre}</p>
                 </div>
 
-                
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Samba 3" />
+                </div>
 
                 <div class="item-duracion">
                   <p>{this.state[2].duracion}</p>
@@ -447,14 +465,15 @@ class Perculoops extends Component {
                     {this.state.isPlaying4 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload4}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[3].nombre}</p>
                 </div>
 
-                
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Samba 4" />
+                </div>
+
                 <div class="item-duracion">
                   <p>{this.state[3].duracion}</p>
                 </div>
@@ -466,14 +485,14 @@ class Perculoops extends Component {
                     {this.state.isPlaying5 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload5}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[4].nombre}</p>
                 </div>
 
-              
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Coco 1" />
+                </div>
 
                 <div class="item-duracion">
                   <p>{this.state[4].duracion}</p>
@@ -486,14 +505,14 @@ class Perculoops extends Component {
                     {this.state.isPlaying6 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload6}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[5].nombre}</p>
                 </div>
 
-                
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Coco 2" />
+                </div>
 
                 <div class="item-duracion">
                   <p>{this.state[5].duracion}</p>
@@ -506,14 +525,15 @@ class Perculoops extends Component {
                     {this.state.isPlaying7 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload7}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[6].nombre}</p>
                 </div>
 
-                
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Afoxe 1" />
+                </div>
+
                 <div class="item-duracion">
                   <p>{this.state[6].duracion}</p>
                 </div>
@@ -525,15 +545,14 @@ class Perculoops extends Component {
                     {this.state.isPlaying8 ? "Pausa" : "Play"}
                   </button>
                 </div>
-                {/* <div>
-                  <button onClick={this.stopReload8}>Stop</button>
-                </div> */}
+
                 <div class="item-nombre">
                   <p>{this.state[7].nombre}</p>
                 </div>
 
-                
-
+                <div class="item-descarga">
+                  <BotonDescargar audioApasar="Afoxe 2" />
+                </div>
 
                 <div class="item-duracion">
                   <p>{this.state[7].duracion}</p>

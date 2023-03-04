@@ -52,15 +52,7 @@ const SignIn = () => {
     });
   };
 
-  // const error = () => {
-  //   MySwal.fire({
-  //     position: "center",
-  //     icon: "warning",
-  //     title: "Usuario o contraseña incorrectos.",
-  //     showConfirmButton: false,
-  //     timer: 1500,
-  //   });
-  // };
+ 
 
   const cerroSesion = () => {
     MySwal.fire({
@@ -83,7 +75,6 @@ const SignIn = () => {
       .then((userCredential) => {
         console.log(userCredential);
         exitoso();
-        
       })
       .catch((error) => {
         console.log(error);
@@ -106,7 +97,7 @@ const SignIn = () => {
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              Iniciar Sesión
+              Iniciar sesión
             </button>
           </>
         )}
@@ -122,7 +113,7 @@ const SignIn = () => {
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
+              <h5 class="modal-title" id="titulo">
                 Iniciar Sesión
               </h5>
               <button
@@ -135,21 +126,33 @@ const SignIn = () => {
             <div class="modal-body">
               <div className="sign-in-container">
                 <form onSubmit={SignIn}>
-                  <h1>Ingresar con tu cuenta</h1>
-                  <input
-                    type="email"
-                    placeholder="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  ></input>
-                  <input
-                    type="password"
-                    placeholder="contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  ></input>
-                  <p>{authUser ? <>Ingresaste</> : <>Email o contraseña incorrectos</>}</p>
-                  <button type="submit">Ingresar</button>
+                  <h1 id="titulo-1">Ingresar con tu cuenta</h1>
+                  <div id="inputs">
+                    <input
+                      id="input-email"
+                      type="email"
+                      placeholder="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    ></input>
+                    <input
+                      id="input-password"
+                      type="password"
+                      placeholder="contraseña"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    ></input>
+                  </div>
+                  <p id="mensaje">
+                    {authUser ? (
+                      <>Ingresaste</>
+                    ) : (
+                      <>Email o contraseña incorrectos</>
+                    )}
+                  </p>
+                  <button id="btn-ingresar" type="submit">
+                    Ingresar
+                  </button>
                 </form>
               </div>
             </div>
@@ -160,13 +163,6 @@ const SignIn = () => {
                 data-bs-dismiss="modal"
               >
                 Cerrar
-              </button>
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-dismiss="modal"
-              >
-                Guardar Cambios
               </button>
             </div>
           </div>

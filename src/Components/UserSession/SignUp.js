@@ -89,7 +89,7 @@ const SignUp = () => {
             <div class="modal-body">
               <div className="sign-in-container">
                 <form onSubmit={SignUp}>
-                  <h1>Crea una cuenta</h1>
+                  <h1>Creá una cuenta</h1>
                   <input
                     type="email"
                     placeholder="email"

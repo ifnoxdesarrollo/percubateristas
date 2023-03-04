@@ -2,7 +2,7 @@ import React from 'react';
 import './Galeria.css';
 
 const Galeria = () => {
-    return(
+    return (
         <>
             <div id="seccion-galeria" className="galeria">
                 <div className='galeria-indice'>
@@ -13,12 +13,12 @@ const Galeria = () => {
 
                 <div className='galeria-carrusell'>
 
-                <div id="carouselExampleControls" className="carousel-products slide" data-bs-ride="carousel">
+                    <div id="carouselExampleControls" className="carousel-products slide" data-bs-ride="carousel">
                         <div className="cards-wrapper">
 
                             <div className="carousel__container">
                                 <div id="item-producto" className="carousel__item">
-                                    <img className="carousel__item__img" src="./hero-muestra.jpg" alt=""/>
+                                    <img className="carousel__item__img" src="./hero-muestra.jpg" alt="" />
                                     <div className="carousel__item__details">
                                         <div>
                                             <p className="carousel__item__details__title" text="Nombre">Foto 1</p>
@@ -28,7 +28,17 @@ const Galeria = () => {
                                     </div>
                                 </div>
                                 <div id="item-producto" className="carousel__item">
-                                    <img className="carousel__item__img" src="./muestra_A.jpg" alt=""/>
+                                <iframe
+                                        src='https://www.instagram.com/p/Cb03Bchp7Cg/embed'
+                                        width="250"
+                                        height="400"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        allowtransparency="true"
+                                    ></iframe>
+                                </div>
+                                <div id="item-producto" className="carousel__item">
+                                    <img className="carousel__item__img" src="./muestra_A.jpg" alt="" />
                                     <div className="carousel__item__details">
                                         <div>
                                             <p className="carousel__item__details__title" text="Nombre"></p>
@@ -38,7 +48,7 @@ const Galeria = () => {
                                     </div>
                                 </div>
                                 <div id="item-producto" className="carousel__item">
-                                    <img className="carousel__item__img" src="./muestra_B.jpg" alt=""/>
+                                    <img className="carousel__item__img" src="./muestra_B.jpg" alt="" />
                                     <div className="carousel__item__details">
                                         <div>
                                             <p className="carousel__item__details__title" text="Nombre"></p>
@@ -48,7 +58,7 @@ const Galeria = () => {
                                     </div>
                                 </div>
                                 <div id="item-producto" className="carousel__item">
-                                    <img className="carousel__item__img" src="./muestra_A.jpg" alt=""/>
+                                    <img className="carousel__item__img" src="./muestra_A.jpg" alt="" />
                                     <div className="carousel__item__details">
                                         <div>
                                             <p className="carousel__item__details__title" text="Nombre"></p>
@@ -57,12 +67,13 @@ const Galeria = () => {
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
 
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
         </>
