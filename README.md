@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# PercuBateristas Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Sinfin Hostel_movil](https://github.com/ifnoxdesarrollo/sin-fin-hostel/blob/master/sinfin-movil.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+Este repositorio contiene el código fuente del sitio web de PercuBateristas Online, una plataforma en línea que ofrece información y servicios relacionados con el trabajo de Facundo Berjelí, músico de Mendoza, Argentina.
 
-### `npm start`
+## Descripción
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+El sitio web se ha desarrollado para brindar a sus visitantes una visión completa de los servicios que ofrece PercuBateristas. 
+Puedes visitar el sitio en [https://percubateristasonline.ar/](https://percubateristasonline.ar/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Características Principales
 
-### `npm test`
+- Información detallada sobre sus planes y servicios.
+- Galería de imágenes que muestra el trabajo de Facundo Berjelí.
+- Sección de contacto para consultas y reservas.
+- Disponibilidad de pistas de audio para descargar.
+- Sistema de login y base de datos externa.
+- Integración con Netlify para implementación continua y alojamiento confiable.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías Utilizadas
 
-### `npm run build`
+- HTML5
+- CSS3
+- React.js
+- Netlify para el alojamiento web
+- Firebase
+- Bootstrap
+- Sweet Alert 2
+- Otros recursos y bibliotecas externas (se detallan en el código)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Autor
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [If Nox](https://github.com/ifnoxdesarrollo) - [Sitio Web Personal](https://ifnox.com.ar)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¡Gracias por visitar el repositorio de PercuBateristas Online!
