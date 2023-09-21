@@ -1,6 +1,6 @@
 # PercuBateristas Website
 
-![Sinfin Hostel_movil](https://github.com/ifnoxdesarrollo/sin-fin-hostel/blob/master/sinfin-movil.png)
+![percubateristas_movil](https://github.com/ifnoxdesarrollo/percubateristas/blob/master/percubateristas-movil.png)
 
 
 Este repositorio contiene el código fuente del sitio web de PercuBateristas Online, una plataforma en línea que ofrece información y servicios relacionados con el trabajo de Facundo Berjelí, músico de Mendoza, Argentina.
